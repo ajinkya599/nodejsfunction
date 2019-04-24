@@ -9,10 +9,10 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '{{ azureRmConnection.Id }}'
+  azureSubscription: 'ddd2a547-c1c9-47a8-8492-50f8b40822fb'
 
   # Function app name
-  functionAppName: '{{ functionAppName }}'
+  functionAppName: 'ajnodejsfunctionapp'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -73,7 +73,7 @@ stages:
               buildType: current
             
           - task: AzureFunctionApp@1
-            displayName: 'Azure Functions App Deploy: {{ functionAppName }}'
+            displayName: 'Azure Functions App Deploy: ajnodejsfunctionapp'
             inputs:
               azureSubscription: '$(azureSubscription)'
               appType: functionAppLinux
